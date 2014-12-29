@@ -1,3 +1,4 @@
+#pragma unmanaged
 /*
 * Internal NT APIs and data structures
 *
@@ -2532,3 +2533,4 @@ extern "C" {
 #endif /* defined(__cplusplus) */
 
 #endif  /* __WINE_WINTERNL_H */
+#pragma managed

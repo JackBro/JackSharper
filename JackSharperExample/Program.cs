@@ -23,8 +23,11 @@ namespace JackSharperExample
             {
                 dllPath = Path.GetDirectoryName(dllPath);
             }
+#if DEBUG
             dllPath += "\\Debug\\TestDll.dll";
-
+#else
+            dllPath += "\\Release\\TestDll.dll";
+#endif
             var proc = Process.GetProcessesByName("ffxiv").FirstOrDefault();
             if (proc == default(Process))
                 return;
@@ -44,6 +47,7 @@ namespace JackSharperExample
                         0x00, 0x00, 0x68, 0x90, 0x01, 0x00, 0x00, 0x6A, 0x08, 0x50, 0xE8, 0x0, 0x0, 0x0, 0x0, 0x83, 0xC4,
                         0x0C, 0x5F, 0xC7
                     }, "xxxxxxxxxxx????xxxxx", -0x17);
+
             var vtableBytes = new byte[4];
             var virtualFunctionBytes = new byte[4];
             int bRead;

@@ -3,7 +3,7 @@
 // but are changed infrequently
 
 #pragma once
-
+#pragma unmanaged
 #include "targetver.h"
 
 #define WIN32_LEAN_AND_MEAN
@@ -16,4 +16,5 @@ namespace NTDLL
 	#include "ntapi.h"
 }
 #include "syscalls.h"
+#pragma managed
 #include "JackSharper.h"

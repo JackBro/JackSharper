@@ -25,7 +25,6 @@ __declspec(naked) void ProcessAPCQueue_PreserveECX()
 		pop ecx
 	}
 }
-#pragma managed
 
 unsigned char* GetRealFunction(unsigned char* fPtr, unsigned char firstByte)
 {
@@ -96,3 +95,4 @@ DWORD GetMainThreadHandle(DWORD pid, PHANDLE hThread)
 	InitializeObjectAttributes(objAtts, NULL, NULL, NULL, NULL);
 	return NTDLL::NtOpenThread(hThread, THREAD_ALL_ACCESS, &objAtts, &cid);
 }
+#pragma managed
